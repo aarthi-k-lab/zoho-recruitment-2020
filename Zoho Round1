@@ -1,0 +1,26 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Program1 {
+
+	public static void main(String[] args) throws IOException
+	{
+		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+		System.out.println("Enter the string");
+		String str=br.readLine();
+		int mid=str.length()/2;
+		int len=str.length();
+		int i=mid,space=1;
+		String out="";
+		do
+		{
+			out+=str.charAt(i);
+			for(int count=space;count<len;count++)
+				System.out.print(" ");
+			System.out.println(out);
+			i=(i+1)%len;
+			space++;
+		}while(i!=mid);
+	}
+}
